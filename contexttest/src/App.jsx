@@ -1,14 +1,13 @@
 import React, { createContext } from 'react'
-import Context from './Context';
-export const myContext = createContext()
-const initialState = 0;
+import UseContext from './UseContext'
 
 const App = () => {
   return (
       <>
-        <myContext.Provider value={initialState}>
-          <Context/>
-        </myContext.Provider>
+      <UseContext/>
+          {/* <myContext.Provider value={name}>
+            <Context/>
+          </myContext.Provider> */}
       </>
   )
 }
