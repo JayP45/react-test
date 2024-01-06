@@ -30,13 +30,13 @@ const CounterProvider = ({ children }) => {
 };
 
 // Step 4: Create custom hooks for consuming the context
-// const useCounter = () => {
-//   const context = useContext(CounterContext);
-//   if (!context) {
-//     throw new Error('useCounter must be used within a CounterProvider');
-//   }
-//   return context;
-// };
+const useCounter = () => {
+  const context = useContext(CounterContext);
+  if (!context) {
+    throw new Error('useCounter must be used within a CounterProvider');
+  }
+  return context;
+};
 
 // Step 5: Create components that use the counter
 const CounterDisplay = () => {
@@ -44,7 +44,7 @@ const CounterDisplay = () => {
   return <div>Count: {state.count}</div>;
 };
 
-const CounterButtons = () => {
+const CounterButtons = () => {  
   const { dispatch } = useCounter();
 
   const increment = () => {
